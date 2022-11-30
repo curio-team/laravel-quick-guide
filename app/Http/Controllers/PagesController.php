@@ -28,7 +28,7 @@ class PagesController extends Controller
     public function processNewCar(Request $request) {
         $newCar = new Car();
         $newCar->brand = $request->brand;
-        $newCar->amount_of_tires = $request->amount_of_tires;
+        $newCar->amount_of_tires = $request->tires;
         $newCar->description = $request->description;
         $newCar->release_date = $request->release_date;
 
@@ -46,10 +46,10 @@ class PagesController extends Controller
 
     public function processEditCar(Request $request, $id) {
         $car = Car::findOrFail($id);
-        $car->brand = 'BMW';
-        $car->amount_of_tires = 4;
-        $car->description = 'BMW is a German multinational company which produces automobiles and motorcycles.';
-        $car->release_date = date('2019-01-01');
+        $car->brand = $request->brand;
+        $car->amount_of_tires = $request->tires;
+        $car->description = $request->description;
+        $car->release_date = $request->release_date;
 
         $car->save();
 

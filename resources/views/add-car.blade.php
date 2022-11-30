@@ -4,9 +4,9 @@
     <h1>Add Car</h1>
     <form action="{{ route('process-add-car') }}" method="POST">
         @csrf
-        <label for="name">Naam</label>
-        <input type="text" name="name" id="name">
-        <label for="founded">Aantal banden</label>
+        <label for="brand">Merk</label>
+        <input type="text" name="brand" id="brand">
+        <label for="tires">Aantal banden</label>
         <input type="number" name="tires" id="tires">
         <label for="description">Omschrijving</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>

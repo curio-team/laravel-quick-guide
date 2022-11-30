@@ -4,8 +4,8 @@
     <h1>Edit Car</h1>
     <form action="{{ route('process-edit-car', $car->id) }}" method="POST">
         @csrf
-        <label for="name">Naam</label>
-        <input type="text" name="name" id="name" value="{{$car->name}}">
+        <label for="brand">Merk</label>
+        <input type="text" name="brand" id="brand" value="{{$car->brand}}">
         <label for="founded">Aantal banden</label>
         <input type="number" name="tires" id="tires" value="{{$car->amount_of_tires}}">
         <label for="description">Omschrijving</label>
