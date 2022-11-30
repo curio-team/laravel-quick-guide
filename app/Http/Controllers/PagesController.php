@@ -25,12 +25,12 @@ class PagesController extends Controller
         return view('add-car');
     }
 
-    public function processNewCar() {
+    public function processNewCar(Request $request) {
         $newCar = new Car();
-        $newCar->brand = 'Audi';
-        $newCar->amount_of_tires = 4;
-        $newCar->description = 'Audi is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles.';
-        $newCar->release_date = date('2019-01-01');
+        $newCar->brand = $request->brand;
+        $newCar->amount_of_tires = $request->amount_of_tires;
+        $newCar->description = $request->description;
+        $newCar->release_date = $request->release_date;
 
         $newCar->save();
 
